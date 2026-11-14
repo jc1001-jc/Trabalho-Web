@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Teacher Conference Form</title>
+  <link rel="stylesheet" href="Estiloso.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="title center">Locadora de Carros</h1>
+    <p class="description center">Aqui você encontra carros buxa por preço mais buxa</p>
+
+    <form>
+      <fieldset>
+        <legend>Marcas de Carros</legend>
+        <label for="Marca-escolhida">Nome da Marca: </label>
+        <input
+            type="text"
+            name="Marca-escolhida"
+            id="Marca-escolhida"
+            required
+            placeholder="Chevrolet"
+          />
+
+        <label for="Nome do carro">Nome do carro: </label>
+        <input
+            type="text"
+            name="Nome do carro"
+            id="Nome do carro"
+            required
+            placeholder="Corsa"
+          />
+      </fieldset>
+
+      <fieldset>
+        <legend>Nome pra Contato</legend>
+        <label for="contato">Nome: </label>
+        <input
+            type="text"
+            name="contato"
+            id="contato"
+            required
+            placeholder="Ze das Couves"
+          />
+      </fieldset>
+
+      <fieldset>
+        <legend>Tipo de contato</legend>
+        <label class="contact-method" for="email">Email: </label>
+        <input
+            id="email"
+            class="button-contact-method"
+            type="radio"
+            name="contact-method"
+            value="email"
+            checked
+          />
+
+        <label class="contact-method" for="phone">Telefone: </label>
+        <input
+            id="phone"
+            class="button-contact-method"
+            type="radio"
+            name="contact-method"
+            value="phone"
+          />
+      </fieldset>
+
+      <fieldset>
+        <legend>Perguntas</legend>
+        <label for="questões"
+            >Por que devemos te emprestar um Carro?</label>
+        <textarea id="questões" name="questões" rows="4" cols="50"></textarea>
+      </fieldset>
+
+      <button class="submit-btn" type="submit">Enviar dados</button>
+    </form>
+  </main>
+</body>
+
+</html>
