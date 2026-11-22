@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Mine | Meu Perfil</title>
+    <!-- Fonte pixel do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <!-- CSS e JavaScript compartilhados por todas as páginas -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO (igual em todas as páginas) -->
+    <header>
+
+        <img src="img/logo.webp" alt="logo da loja">
+
+        <nav id="lista_cabeca">
+
+            <a id="inicio" href="index.html">INÍCIO</a>
+
+            <!-- Menu suspenso com as páginas de cada console -->
+            <div class="dropdown">
+                <a id="consoles" href="#">CONSOLES ▾</a>
+                <div class="submenu">
+                    <a href="nintendo64.html">NINTENDO 64</a>
+                    <a href="xbox360.html">XBOX 360</a>
+                    <a href="ps2.html">PS2</a>
+                </div>
+            </div>
+
+            <a id="jogos" href="#">JOGOS</a>
+
+            <!-- O número do carrinho é atualizado pelo JavaScript -->
+            <a id="carrinho" href="#">CARRINHO<span id="contador-carrinho">0</span></a>
+
+            <a id="perfil" href="perfil.html"><img src="#perfil" alt="perfil"></a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main>
+
+        <!-- TÍTULO DA PÁGINA -->
+        <section class="hero-console">
+            <h1>Meu Perfil</h1>
+            <p>Cadastre seus dados para receber ofertas dos seus consoles favoritos.</p>
+        </section>
+
+        <!-- FORMULÁRIO (validado pelo script.js) -->
+        <section class="secao">
+            <h2>Cadastro</h2>
+
+            <form id="form-perfil" class="formulario">
+
+                <!-- DADOS PESSOAIS -->
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Zé das Couves">
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="ze@email.com">
+
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" required placeholder="(12) 99999-9999">
+
+                    <label for="nascimento">Data de nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </fieldset>
+
+                <!-- PREFERÊNCIAS -->
+                <fieldset>
+                    <legend>Preferências</legend>
+
+                    <label for="console">Console favorito</label>
+                    <select id="console" name="console" required>
+                        <option value="">Escolha um console</option>
+                        <option value="n64">Nintendo 64</option>
+                        <option value="xbox360">Xbox 360</option>
+                        <option value="ps2">PlayStation 2</option>
+                        <option value="outro">Outro</option>
+                    </select>
+
+                    <label>Como prefere ser contatado?</label>
+                    <input type="radio" id="contato-email" name="contato" value="email" checked>
+                    <label class="inline" for="contato-email">E-mail</label>
+                    <input type="radio" id="contato-whatsapp" name="contato" value="whatsapp">
+                    <label class="inline" for="contato-whatsapp">WhatsApp</label>
+
+                    <label>
+                        <input type="checkbox" id="novidades" name="novidades" checked>
+                        Quero receber novidades e promoções
+                    </label>
+                </fieldset>
+
+                <!-- SOBRE VOCÊ -->
+                <fieldset>
+                    <legend>Sobre você</legend>
+
+                    <label for="sobre">Qual jogo marcou sua infância?</label>
+                    <textarea id="sobre" name="sobre" rows="4" maxlength="200" placeholder="Conte pra gente..."></textarea>
+                    <!-- Atualizado pelo JavaScript enquanto a pessoa digita -->
+                    <small id="contador-caracteres">0 / 200</small>
+                </fieldset>
+
+                <!-- Mensagem de erro ou sucesso (preenchida pelo JavaScript) -->
+                <p id="mensagem-form" class="mensagem" role="status"></p>
+
+                <button type="submit" class="btn">Salvar perfil</button>
+                <button type="reset" class="btn-link">Limpar</button>
+            </form>
+        </section>
+    </main>
+
+
+    <!-- RODAPÉ (igual em todas as páginas) -->
+    <footer>
+
+        <!-- QUEM SOMOS -->
+        <div id="quem_somos">
+            <h4>Quem Somos?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cumque?</p>
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div id="endereco">
+            <h4>Endereço</h4>
+            <p>Telefone:</p>
+            <p>Email:</p>
+            <p>Rua Monsenhor José Vita, 280. Vila Abernéssia - Campos Jordão - SP</p>
+        </div>
+
+        <!-- MEIOS DE PAGAMENTO -->
+        <div id="meios_de_pagamento">
+            <h4>Pagamento</h4>
+            <ul>
+                <li>Débito</li>
+                <li>Crédito</li>
+                <li>Pix</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Mine | PlayStation 2</title>
+    <!-- Fonte pixel do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <!-- CSS e JavaScript compartilhados por todas as páginas -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<!-- A classe "ps2" troca a cor de destaque da página (ver style.css) -->
+<body class="ps2">
+
+    <!-- CABEÇALHO (igual em todas as páginas) -->
+    <header>
+
+        <img src="img/logo.webp" alt="logo da loja">
+
+        <nav id="lista_cabeca">
+
+            <a id="inicio" href="index.html">INÍCIO</a>
+
+            <!-- Menu suspenso com as páginas de cada console -->
+            <div class="dropdown">
+                <a id="consoles" href="#">CONSOLES ▾</a>
+                <div class="submenu">
+                    <a href="nintendo64.html">NINTENDO 64</a>
+                    <a href="xbox360.html">XBOX 360</a>
+                    <a href="ps2.html">PS2</a>
+                </div>
+            </div>
+
+            <a id="jogos" href="#">JOGOS</a>
+
+            <!-- O número do carrinho é atualizado pelo JavaScript -->
+            <a id="carrinho" href="#">CARRINHO<span id="contador-carrinho">0</span></a>
+
+            <a id="perfil" href="perfil.html"><img src="#perfil" alt="perfil"></a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main>
+
+        <!-- APRESENTAÇÃO DO CONSOLE -->
+        <section class="hero-console">
+            <h1>PlayStation 2</h1>
+            <p>O console mais vendido da história, que também tocava DVDs e rodava os jogos do PS1.</p>
+        </section>
+
+        <!-- FICHA TÉCNICA (tabela) -->
+        <section class="secao">
+            <h2>Ficha Técnica</h2>
+            <table>
+                <caption>Especificações do PlayStation 2</caption>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Especificação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fabricante</td>
+                        <td>Sony</td>
+                    </tr>
+                    <tr>
+                        <td>Lançamento</td>
+                        <td>2000 (Japão)</td>
+                    </tr>
+                    <tr>
+                        <td>Processador</td>
+                        <td>Emotion Engine, 294,9 MHz</td>
+                    </tr>
+                    <tr>
+                        <td>Memória</td>
+                        <td>32 MB RDRAM</td>
+                    </tr>
+                    <tr>
+                        <td>Mídia</td>
+                        <td>DVD e CD</td>
+                    </tr>
+                    <tr>
+                        <td>Controle</td>
+                        <td>DualShock 2</td>
+                    </tr>
+                    <tr>
+                        <td>Unidades vendidas</td>
+                        <td>Mais de 155 milhões</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- LISTA NÃO ORDENADA -->
+        <section class="secao">
+            <h2>Por que colecionar?</h2>
+            <ul class="lista-estrela">
+                <li>Console mais vendido de todos os tempos</li>
+                <li>Também funcionava como aparelho de DVD</li>
+                <li>Roda a maioria dos jogos do PlayStation 1</li>
+                <li>Biblioteca com milhares de jogos</li>
+                <li>Versão Slim compacta e fácil de encontrar</li>
+            </ul>
+        </section>
+
+        <!-- LISTA ORDENADA -->
+        <section class="secao">
+            <h2>Top 5 Jogos</h2>
+            <ol class="lista-ranking">
+                <li>Grand Theft Auto: San Andreas</li>
+                <li>God of War</li>
+                <li>Shadow of the Colossus</li>
+                <li>Metal Gear Solid 3: Snake Eater</li>
+                <li>Final Fantasy X</li>
+            </ol>
+        </section>
+
+        <!-- PRODUTOS À VENDA -->
+        <h2>À Venda</h2>
+        <section class="cards secao">
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>PlayStation 2 Slim</h3>
+                <p class="preco">R$ 749,90</p>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>Controle DualShock 2</h3>
+                <p class="preco">R$ 129,90</p>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>Memory Card 8 MB</h3>
+                <p class="preco">R$ 59,90</p>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+        </section>
+
+        <!-- JOGOS USADOS -->
+        <h2>Jogos Usados</h2>
+        <section class="cards secao">
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>GTA: San Andreas</h3>
+                <p class="preco">R$ 79,90</p>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>GTA: Vice City</h3>
+                <p class="preco">R$ 69,90</p>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>Need for Speed: Underground</h3>
+                <p class="preco">R$ 59,90</p>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- RODAPÉ (igual em todas as páginas) -->
+    <footer>
+
+        <!-- QUEM SOMOS -->
+        <div id="quem_somos">
+            <h4>Quem Somos?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cumque?</p>
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div id="endereco">
+            <h4>Endereço</h4>
+            <p>Telefone:</p>
+            <p>Email:</p>
+            <p>Rua Monsenhor José Vita, 280. Vila Abernéssia - Campos Jordão - SP</p>
+        </div>
+
+        <!-- MEIOS DE PAGAMENTO -->
+        <div id="meios_de_pagamento">
+            <h4>Pagamento</h4>
+            <ul>
+                <li>Débito</li>
+                <li>Crédito</li>
+                <li>Pix</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Mine</title>
+    <!-- Fonte pixel do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <!-- CSS e JavaScript compartilhados por todas as páginas -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO (igual em todas as páginas) -->
+    <header>
+
+        <img src="img/logo.webp" alt="logo da loja">
+
+        <nav id="lista_cabeca">
+
+            <a id="inicio" href="index.html">INÍCIO</a>
+
+            <!-- Menu suspenso com as páginas de cada console -->
+            <div class="dropdown">
+                <a id="consoles" href="#">CONSOLES ▾</a>
+                <div class="submenu">
+                    <a href="nintendo64.html">NINTENDO 64</a>
+                    <a href="xbox360.html">XBOX 360</a>
+                    <a href="ps2.html">PS2</a>
+                </div>
+            </div>
+
+            <a id="jogos" href="#">JOGOS</a>
+
+            <!-- O número do carrinho é atualizado pelo JavaScript -->
+            <a id="carrinho" href="#">CARRINHO<span id="contador-carrinho">0</span></a>
+
+            <a id="perfil" href="perfil.html"><img src="#perfil" alt="perfil"></a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main>
+
+        <!-- BANNER -->
+        <div id="banner">
+            <img src="img/banner.jpg" alt="banner da loja">
+        </div>
+
+
+        <!-- PRODUTOS EM DESTAQUE -->
+        <h2>Produtos em Destaque</h2>
+
+        <section id="destaques" class="cards secao">
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>Nintendo 64</h3>
+                <p class="preco">R$ 1.299,90</p>
+                <a class="btn-link" href="nintendo64.html">Ver mais</a>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>Xbox 360</h3>
+                <p class="preco">R$ 899,90</p>
+                <a class="btn-link" href="xbox360.html">Ver mais</a>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="#Produto" alt="imagem_produto">
+                <h3>PlayStation 2</h3>
+                <p class="preco">R$ 749,90</p>
+                <a class="btn-link" href="ps2.html">Ver mais</a>
+                <button class="btn btn-comprar">Comprar</button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- RODAPÉ (igual em todas as páginas) -->
+    <footer>
+
+        <!-- QUEM SOMOS -->
+        <div id="quem_somos">
+            <h4>Quem Somos?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cumque?</p>
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div id="endereco">
+            <h4>Endereço</h4>
+            <p>Telefone:</p>
+            <p>Email:</p>
+            <p>Rua Monsenhor José Vita, 280. Vila Abernéssia - Campos Jordão - SP</p>
+        </div>
+
+        <!-- MEIOS DE PAGAMENTO -->
+        <div id="meios_de_pagamento">
+            <h4>Pagamento</h4>
+            <ul>
+                <li>Débito</li>
+                <li>Crédito</li>
+                <li>Pix</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
