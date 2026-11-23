@@ -1,93 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locadora Bucha</title>
-  <link rel="stylesheet" href="Estiloso.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Golden Mine</title>
+    <!-- Fonte pixel do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <!-- CSS e JavaScript compartilhados por todas as páginas -->
+    <link rel="stylesheet" href="Estiloso.css">
+    <script src="Funcional.js" defer></script>
 </head>
-<header>
-  <div class="nav-container">
-        <div class="nav-menu">
-            <button>Home</button>
-            <button>About</button>
-            <button>Contact</button>
-        </div>
-    </div>
-</header>
+
+<!-- Sem classe de console: o JavaScript coloca n64, xbox ou ps2 quando a pessoa escolhe o favorito -->
 <body>
-  
-  <main class="container">
-    <h1 class="title center">Locadora de Carros</h1>
-    <p class="description center">Aqui você encontra carros buxa por preço mais buxa</p>
 
-    <form>
-      <fieldset>
-        <legend>Marcas de Carros</legend>
-        <label for="Marca-escolhida">Nome da Marca: </label>
-        <input
-            type="text"
-            name="Marca-escolhida"
-            id="Marca-escolhida"
-            required
-            placeholder="Chevrolet"
-          />
+    <!-- CABEÇALHO (igual em todas as páginas) -->
+    <header>
 
-        <label for="Nome do carro">Nome do carro: </label>
-        <input
-            type="text"
-            name="Nome do carro"
-            id="Nome do carro"
-            required
-            placeholder="Corsa"
-          />
-      </fieldset>
+        <img src="img/logo.webp" alt="logo da loja">
 
-      <fieldset>
-        <legend>Nome pra Contato</legend>
-        <label for="contato">Nome: </label>
-        <input
-            type="text"
-            name="contato"
-            id="contato"
-            required
-            placeholder="Ze das Couves"
-          />
-      </fieldset>
+        <nav id="lista_cabeca">
 
-      <fieldset>
-        <legend>Tipo de contato</legend>
-        <label class="contact-method" for="email">Email: </label>
-        <input
-            id="email"
-            class="button-contact-method"
-            type="radio"
-            name="contact-method"
-            value="email"
-            checked
-          />
+            <a id="inicio" href="index.html">INÍCIO</a>
 
-        <label class="contact-method" for="phone">Telefone: </label>
-        <input
-            id="phone"
-            class="button-contact-method"
-            type="radio"
-            name="contact-method"
-            value="phone"
-          />
-      </fieldset>
+            <!-- Menu suspenso com as páginas de cada console -->
+            <div class="dropdown">
+                <a id="consoles" href="#">CONSOLES ▾</a>
+                <div class="submenu">
+                    <a href="nintendo64.html">NINTENDO 64</a>
+                    <a href="xbox360.html">XBOX 360</a>
+                    <a href="ps2.html">PS2</a>
+                </div>
+            </div>
 
-      <fieldset>
-        <legend>Perguntas</legend>
-        <label for="questões"
-            >Por que devemos te emprestar um Carro?</label>
-        <textarea id="questões" name="questões" rows="4" cols="50"></textarea>
-      </fieldset>
+            <a id="jogos" href="#">JOGOS</a>
 
-      <button class="submit-btn" type="submit">Enviar dados</button>
-    </form>
-  </main>
+            <!-- O número do carrinho é atualizado pelo JavaScript -->
+            <a id="carrinho" href="#">CARRINHO<span id="contador-carrinho">0</span></a>
+
+            <a id="perfil" href="login.html"><img src="#perfil" alt="perfil"></a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main>
+
+        <!-- TOPO DA PÁGINA (a borda e a sombra mudam de cor com o console favorito) -->
+        <section class="hero-console">
+            <h1>Entrar</h1>
+            <p>Acesse sua conta e escolha o console que vai ser a cara do seu perfil.</p>
+        </section>
+
+        <!-- FORMULÁRIO DE LOGIN -->
+        <section class="secao">
+            <form id="form-login" class="formulario" novalidate>
+
+                <fieldset>
+                    <legend>Acesso</legend>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="jogador@email.com" autocomplete="username" required>
+
+                    <label for="senha">Senha</label>
+                    <div class="campo-senha">
+                        <input type="password" id="senha" name="senha" placeholder="Mínimo de 6 caracteres" autocomplete="current-password" required>
+                        <button type="button" id="mostrar-senha" class="mostrar-senha" aria-label="Mostrar senha">Mostrar</button>
+                    </div>
+
+                    <input type="checkbox" id="lembrar" name="lembrar">
+                    <label class="inline" for="lembrar">Lembrar meu e-mail</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferências</legend>
+
+                    <label for="console-favorito">Console favorito</label>
+                    <select id="console-favorito" name="console-favorito">
+                        <option value="">Escolha um console</option>
+                        <option value="n64">Nintendo 64</option>
+                        <option value="xbox">Xbox 360</option>
+                        <option value="ps2">PlayStation 2</option>
+                    </select>
+
+                    <!-- Mostra a escolha na hora, antes de entrar -->
+                    <p id="preview-console" class="preview-console">Nenhum console escolhido.</p>
+
+                    <p class="rotulo-grupo">Avisar sobre novidades por:</p>
+                    <input type="radio" id="aviso-email" name="aviso" value="E-mail" checked>
+                    <label class="inline" for="aviso-email">E-mail</label>
+
+                    <input type="radio" id="aviso-telefone" name="aviso" value="Telefone">
+                    <label class="inline" for="aviso-telefone">Telefone</label>
+                </fieldset>
+
+                <!-- Mensagem de erro / sucesso (o JavaScript preenche) -->
+                <div id="mensagem-login" class="mensagem" role="alert"></div>
+
+                <button type="submit" class="btn btn-entrar">Entrar</button>
+
+                <p class="links-login">
+                    Ainda não tem conta?
+                    <a class="btn-link" href="perfil.html">Criar perfil</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+
+    <!-- RODAPÉ (igual em todas as páginas) -->
+    <footer>
+
+        <!-- QUEM SOMOS -->
+        <div id="quem_somos">
+            <h4>Quem Somos?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cumque?</p>
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div id="endereco">
+            <h4>Endereço</h4>
+            <p>Telefone:</p>
+            <p>Email:</p>
+            <p>Rua Monsenhor José Vita, 280. Vila Abernéssia - Campos Jordão - SP</p>
+        </div>
+
+        <!-- MEIOS DE PAGAMENTO -->
+        <div id="meios_de_pagamento">
+            <h4>Pagamento</h4>
+            <ul>
+                <li>Débito</li>
+                <li>Crédito</li>
+                <li>Pix</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
